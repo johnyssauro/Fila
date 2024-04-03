@@ -68,3 +68,19 @@ int pop(fila * f) {
     return item->valor;
 
 }
+
+void liberar_fila(fila * f){
+
+    elemento * primeiro = f->inicio;
+
+    while(f->inicio != NULL){
+
+        free(f->inicio);
+
+        f->inicio = primeiro->prox;
+
+    }
+
+    free(f);
+
+}
