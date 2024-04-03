@@ -37,6 +37,7 @@ void push(fila * f, int valor){
     elemento * novo = malloc(sizeof(elemento));
 
     novo->valor = valor;
+    novo->prox = NULL;
     
     if(f->inicio == NULL){
         f->inicio = novo;
@@ -72,10 +73,14 @@ int pop(fila * f) {
 void liberar_fila(fila * f) {
 
     elemento * primeiro = f->inicio;
+    elemento * temp;
 
     while(f->inicio != NULL){
 
-        free(f->inicio);
+        temp = f->inicio;
+        f->inicio = primeiro->prox;
+
+        free(temp);
 
         f->inicio = primeiro->prox;
 
@@ -89,7 +94,7 @@ void fila_imprime(fila * f) {
 
     elemento * aux = f->inicio;
 
-    while(f->inicio != NULL){
+    while(aux != NULL){
 
         printf("%d \n", aux);
 
@@ -97,6 +102,6 @@ void fila_imprime(fila * f) {
 
     }
 
-    printf("_________________________");
+    printf("--------------------\n");
 
 }

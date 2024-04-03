@@ -18,7 +18,7 @@ typedef struct fila {
 
 int main() {
 
-    fila *f = cria_fila();
+    fila f = criar_fila();
 
     push(&f, 4);
     push(&f, 6);
@@ -44,7 +44,7 @@ int main() {
     printf("%d\n", pop(&f));
     printf("%d\n", pop(&f));
 
-    fila_libera(&f);
+    liberar_fila(&f);
 
 
     return 0;
