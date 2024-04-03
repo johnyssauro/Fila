@@ -52,3 +52,19 @@ void push(fila * f, int valor){
     f->final = novo;
 
 }
+
+int pop(fila * f) {
+
+    if(f->inicio == NULL){
+
+        return -1;
+
+    }
+
+    elemento * item = f->inicio;
+
+    f->inicio = item->prox;
+
+    return item->valor;
+
+}
