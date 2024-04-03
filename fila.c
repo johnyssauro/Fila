@@ -42,9 +42,13 @@ void push(fila * f, int valor){
         f->inicio = novo;
     }
 
-    elemento * antigoFinal = f->final;
+    if(f->final != NULL){
+        
+        elemento * anterior = f->final;
+        anterior->prox = novo;
 
-    antigoFinal->prox = novo;
-    novo->prox = f->final;
+    }
+
+    f->final = novo;
 
 }
