@@ -64,9 +64,12 @@ int pop(fila * f) {
 
     elemento * item = f->inicio;
 
+    int valor = item->valor;
     f->inicio = item->prox;
 
-    return item->valor;
+    free(item);
+
+    return valor;
 
 }
 
@@ -96,7 +99,7 @@ void fila_imprime(fila * f) {
 
     while(aux != NULL){
 
-        printf("%d \n", aux);
+        printf("%d \n", aux->valor);
 
         aux = aux->prox;
 
