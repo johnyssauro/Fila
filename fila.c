@@ -69,7 +69,7 @@ int pop(fila * f) {
 
 }
 
-void liberar_fila(fila * f){
+void liberar_fila(fila * f) {
 
     elemento * primeiro = f->inicio;
 
@@ -82,5 +82,21 @@ void liberar_fila(fila * f){
     }
 
     free(f);
+
+}
+
+void fila_imprime(fila * f) {
+
+    elemento * aux = f->inicio;
+
+    while(f->inicio != NULL){
+
+        printf("%d \n", aux);
+
+        aux = aux->prox;
+
+    }
+
+    printf("_________________________");
 
 }
