@@ -46,6 +46,5 @@ int main() {
 
     liberar_fila(&f);
 
-
     return 0;
 }
