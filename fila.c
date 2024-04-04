@@ -85,8 +85,6 @@ void liberar_fila(fila * f) {
 
         free(temp);
 
-        f->inicio = primeiro->prox;
-
     }
 
     free(f);
